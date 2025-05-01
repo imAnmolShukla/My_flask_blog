@@ -1,0 +1,23 @@
+from flaskblog import app,db
+>>> app.app_context().push()
+>>> db.create_all()
+from flaskblog import User, Post
+>>> User.query.all()
+post_1= Post(title='Blog 1', content='First Post Conetent',user_id=user.id)
+db.session.add(post_1)
+>>> db.session.add(post_1)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db
+db=SQLAlchemy(app)
+
+
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(100), nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
+    def __repr__(self):
+        return f"Post('{self.title}','{self.date_posted}')"
+        db.session.get(User, 1)

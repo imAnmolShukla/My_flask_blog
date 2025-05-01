@@ -1,0 +1,3 @@
+set FLASk_APP=flaskblog.py     
+ $env:FLASK_APP = "flaskblog.py"
+ flask run
